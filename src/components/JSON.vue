@@ -86,6 +86,10 @@
 
 <script setup>
 import { ref, computed } from "vue"
+// Activity 1: Import JSON files (authors.json and bookstores.json)
+// TODO: CODE TO IMPORT JSON FILES HERE
+import authors from "../assets/json/authors.json"
+import bookstores from "../assets/json/bookstores.json"
 
 // Activity 1: Import JSON files (authors.json and bookstores.json)
 // TODO: CODE TO IMPORT JSON FILES HERE
