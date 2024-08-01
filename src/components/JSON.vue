@@ -86,7 +86,6 @@
 
       <h3>Working with Arrays in Objects</h3>
       <!-- Activity 12: Get the top sellers from the bookstores object. -->
-      <!-- TODO: CODE TO GET TOP SELLERS HERE -->
       <p>We operate in:</p>
       <ul>
         <li v-for="(value, index) in bookstores.countries" :key="index">
@@ -105,16 +104,26 @@
       <h2>v-if & v-else</h2>
       <p>Toggle visibility based on a condition.</p>
       <!-- Activity 13: Toggle the message visibility when the button is clicked. -->
-      <!-- TODO: CODE TO TOGGLE MESSAGE VISIBILITY HERE. Hint: Use the v-if directive. -->
       <button @click="showMessage = !showMessage">Toggle Message</button>
-      <p class="message success">✨ You're a Vue superstar! ✨</p>
-      <p>Click the button to see a message.</p>
+      <p v-if="showMessage" class="message success">
+        ✨ You're a Vue superstar! ✨
+      </p>
+      <p v-else class="message">Click the button to see a message.</p>
     </section>
 
     <section class="lab-section">
       <h2>Attribute, Class and Style Binding with <code>v-bind</code></h2>
       <p>Highlighting Specific Authors:</p>
-
+      <ul>
+        <li 
+          v-for="author in authors" 
+          :key="author.id" 
+          :class="{ active: author.name === 'George Orwell'? isActive: '' }" 
+          :style="{ color: author.name === 'George Orwell'? textColor: '', fontSize: author.name === 'George Orwell'? fontSize + 'px': '' }"
+        >
+          {{ author.name }}
+        </li>
+      </ul>
     </section>
   </div>
 </template>
@@ -126,6 +135,9 @@ import authors from "../assets/json/authors.json"
 import bookstores from "../assets/json/bookstores.json"
 
 const showMessage = ref(false)
+const isActive = ref(true)
+const textColor = ref('blue')
+const fontSize = ref(18)
 
 // Activity 2: Get authors born after 1850
 const modernAuthors = computed(() =>
@@ -144,7 +156,6 @@ const orwell = computed(() =>
 
 // Activity 5: Find author by ID
 const austen = computed(() =>
-  // TODO: CODE TO FIND AUTHOR BY ID HERE
   authors.find((author) => author.id === 1)
 )
 </script>
