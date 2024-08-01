@@ -112,11 +112,13 @@ const allFamousWorks = computed(() => {
 // Activity 4: Find author by name
 const orwell = computed(() => {
   // TODO: CODE TO FIND AUTHOR BY NAME HERE
+  authors.flatMap((author) => author.map((work) => work.name))
 })
 
 // Activity 5: Find author by ID
 const austen = computed(() => {
   // TODO: CODE TO FIND AUTHOR BY ID HERE
+  authors.flatMap((author) => author.map((work) => work.id))
 })
 </script>
 
