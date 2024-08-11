@@ -5,23 +5,23 @@
             <h1 class="text-center">User Information Form</h1>
             <form @submit.prevent="submitForm">
                 <div class="row mb-3">
-                    <div class="col-md-6">
+                    <div class="col-6">
                         <label for="username" class="form-label">Username</label><br>
                         <input type="text" class="form-control" id="username" name="username" v-model="formData.username"><br>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-6">
                         <label for="password" class="form-label">Password</label><br>
                         <input type="password" class="form-control" id="password" v-model="formData.password" name="password"><br>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <div class="col-md-6">
+                    <div class="col-6">
                         <div class="form-check d-flex align-items-center">
                             <input type="checkbox" class="form-check-input" id="isAustralian" name="isAustralian" v-model="formData.isAustralian"><br>
                             <label class="form-check-label" for="isAustralian">Australian Resident?</label><br>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-6">
                         <label for="gender" class="form-label">Gender</label><br>
                         <select class="form-select" id="gender" v-model="formData.gender">
                             <option value="female">Female</option>
