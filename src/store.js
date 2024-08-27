@@ -15,13 +15,11 @@ const useUserStore = defineStore("user",
                 { userName: 'user', password: 'Zxc1234,', role: 'user' },
                 { userName: 'guest', password: 'Zxc1234,', role: 'guest' }
             ],
-            isLoggedIn: false,
             loggedInUser: null,
         }),
         actions: {
             logout() {
                 this.loggedInUser = null;
-                this.isLoggedIn = false;
                 localStorage.removeItem('loggedInUser');
                 alert('Logged out');
             },
@@ -31,12 +29,10 @@ const useUserStore = defineStore("user",
                 );
                 if (user) {
                     this.loggedInUser = user;
-                    this.isLoggedIn = true;
                     localStorage.setItem('loggedInUser', JSON.stringify(user));
                     alert('Login successful');
 
                 } else {
-                    this.isLoggedIn = false;
                     alert('Login failed: Incorrect username or password');
                 }
                 // this.loggedInUser = true;
@@ -46,7 +42,6 @@ const useUserStore = defineStore("user",
                 const user = JSON.parse(localStorage.getItem('loggedInUser'));
                 if (user) {
                     this.loggedInUser = user;
-                    this.isLoggedIn = true;
                 }
             }
         },
