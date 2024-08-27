@@ -1,5 +1,5 @@
 <template>
-    <div class="about mt-5">
+    <div class="about container mt-5">
         <div class="row">
           <div class="col-md-8 offset-md-2">
             <h1 class="text-center">About Our Library</h1>
