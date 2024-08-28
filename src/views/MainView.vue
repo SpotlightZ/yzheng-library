@@ -23,6 +23,11 @@ const toLogout = () => {
 </template>
 
 <style scoped>
+.logout {
+  justify-content: end;
+  padding: 10px 60px;
+}
+
 .logout > button {
     display: inline-block;
     width: 80px;

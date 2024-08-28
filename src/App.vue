@@ -55,7 +55,6 @@
 .text-succeeful {
   color: green;
 }
-
 /* header {
   line-height: 1.5;
 }

@@ -3,12 +3,6 @@ import { ref } from 'vue'
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 
-import { onMounted } from 'vue';
-
-onMounted(() => {
-  // 确保没有在 mounted 或其他生命周期钩子中抛出异常
-  console.log('Component mounted');
-});
 const formData = ref({
   username: '',
   password: '',
@@ -159,7 +153,6 @@ const validateText = (blur) => {
                 {{ errors.confirmPassword }}
               </div>
             </div>
-
           </div>
           <div class="row mb-3">
             <div class="col-md-6 col-sm-6">
