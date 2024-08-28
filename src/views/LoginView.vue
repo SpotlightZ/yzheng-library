@@ -1,3 +1,67 @@
+<script setup>
+import { ref } from 'vue'
+import { useUserStore } from '@/store';
+import router from '../router/index'
+
+
+const userName = ref('');
+const password = ref('');
+const userStore = useUserStore();
+
+
+const errors = ref({
+  username: null,
+  password: null
+})
+
+const validateName = (blur) => {
+  if (userName.value == "") {
+    if (blur) errors.value.username = 'Please enter your username'
+  } else {
+    errors.value.username = null
+  }
+}
+const validatePassword = (blur) => {
+  if (password.value == "") {
+    if (blur) errors.value.password = 'Please enter your password'
+  } else {
+    errors.value.password = null
+  }
+}
+
+const doLogin = () => {
+    // loginLoading.value = true;
+    try {
+        if (userName.value == "") {
+            errors.value.username = "Please enter your username";
+            return;
+        }
+        if (password.value == "") {
+            errors.value.password = "Please enter your password";
+            return;
+        }
+
+        userStore.login(userName.value, password.value);
+        const role = JSON.parse(localStorage.getItem('loggedInUser')).role
+        console.log(role, '=role');
+
+
+        if (role === 'admin') {
+          router.replace("/home");
+        } else if (role === 'user') {
+          router.replace("/about");
+        } else {
+          // router.push('/guest-dashboard');
+        }
+    }
+    finally {
+        // loginLoading.value = false;
+    }
+
+}
+
+</script>
+
 <template>
 <div class="login">
   <h1>FIT5032  A0 - Week 5 - eFolio</h1>
@@ -12,6 +76,8 @@
             class="form-control"
             placeholder="Username"
             id="username"
+            @blur="() => validateName(true)"
+            @input="() => validateName(false)"
             v-model="userName"
             />
             <!-- @blur="() => validateName(true)"
@@ -25,6 +91,8 @@
             type="password"
             class="form-control"
             placeholder="password"
+              @blur="() => validatePassword(true)"
+              @input="() => validatePassword(false)"
             v-model="password"
             />
             <!-- id="password"
@@ -38,63 +106,6 @@
   </div>
 </div>
 </template>
-  
-<script setup>
-import { ref } from 'vue'
-import { useUserStore } from '@/store';
-import router from '../router/index'
-
-
-const userName = ref('');
-const password = ref('');
-const userStore = useUserStore();
-
-
-// const doLogin = () => {
-  // userStore.login(userName.value, password.value);
-  // validateName(true)
-  // validatePassword(true)
-  // if (userStore.isAuthenticated) {
-  //   if (userStore.isAdmin) {
-  //     console.log(userStore);
-  //     // router.push('/admin-dashboard');
-  //   } else if (userStore.isUser) {
-  //     console.log('进入1');
-  //   } else {
-  //     console.log(userStore);
-  //     // router.push('/guest-dashboard');
-  //   }
-  // }
-// };
-
-
-const doLogin = () => {
-    // loginLoading.value = true;
-    try {
-        if (userName.value == "") {
-            alert("Please enter your username");
-            return;
-        }
-        if (password.value == "") {
-            alert("Please enter your password");
-            return;
-        }
-
-        userStore.login(userName.value, password.value);
-        router.replace("/about");
-    }
-    finally {
-        // loginLoading.value = false;
-    }
-
-}
-
-
-const errors = ref({
-  username: null,
-  password: null
-})
-</script>
   
 <style scoped>
 .login {

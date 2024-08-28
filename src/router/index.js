@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import MainView from '../views/MainView.vue'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import { useUserStore } from "@/store";
@@ -12,8 +13,7 @@ const routes = [
   {
     path: "/",
     redirect: "/login",
-    // component: () => import("../App.vue"),
-    component: HomeView,
+    component: MainView,
     children: [
       {
         path: 'home',

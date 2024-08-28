@@ -11,6 +11,12 @@
   
   <script setup>
   // No script needed for now
+import { onMounted } from 'vue';
+
+onMounted(() => {
+  // 确保没有在 mounted 或其他生命周期钩子中抛出异常
+  console.log('Component mounted');
+});
   </script>
   
   <style>

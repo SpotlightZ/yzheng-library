@@ -1,16 +1,13 @@
 <script setup>
 // import JSONLab from './components/JSONLab.vue'
-import BHeader from './components/BHeader.vue'
+// import BHeader from './components/BHeader.vue'
 // import LibraryRegistrationForm from './views/HomeView.vue'
-import { useUserStore } from '@/store';
-
-const userStore = useUserStore();
 </script>
 
 <template>
-  <header v-if="userStore.isAuthenticated">
-    <BHeader />
-  </header>
+  <!-- <header v-if="userStore.isAuthenticated"> -->
+    <!-- <BHeader /> -->
+  <!-- </header> -->
 
   <main>
     <!-- <LibraryRegistrationForm /> -->
@@ -57,6 +54,11 @@ const userStore = useUserStore();
 
 .text-succeeful {
   color: green;
+}
+
+.logout {
+  justify-content: end;
+  padding: 10px 60px;
 }
 /* header {
   line-height: 1.5;
