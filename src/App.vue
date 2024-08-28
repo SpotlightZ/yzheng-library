@@ -56,10 +56,6 @@
   color: green;
 }
 
-.logout {
-  justify-content: end;
-  padding: 10px 60px;
-}
 /* header {
   line-height: 1.5;
 }
