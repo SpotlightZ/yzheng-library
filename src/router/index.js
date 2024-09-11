@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import MainView from '../views/MainView.vue'
 import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
+import FirebaseSigninView from '../views/FirebaseSigninView.vue'
+import FirebaseRegisterView from '../views/FirebaseRegisterView.vue'
 import { useUserStore } from "@/store";
 
 const routes = [
@@ -24,6 +26,16 @@ const routes = [
         path: 'about',
         name: 'About',
         component: AboutView
+      },
+      {
+        path: 'firelogin',
+        name: 'Firelogin',
+        component: FirebaseSigninView
+      },
+      {
+        path: 'fireregister',
+        name: 'FireRegister',
+        component: FirebaseRegisterView
       }
     ]
   }
