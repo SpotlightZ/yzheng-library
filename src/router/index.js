@@ -14,37 +14,62 @@ const routes = [
   //   component: () => import("../views/LoginView.vue")
   // },
   {
-    path: "/",
-    redirect: "/home",
-    component: MainView,
-    children: [
-      {
-        path: 'home',
-        name: 'Home',
-        component: HomeView
-      },
-      {
-        path: 'about',
-        name: 'About',
-        component: AboutView
-      },
-      {
-        path: 'firelogin',
-        name: 'Firelogin',
-        component: FirebaseSigninView
-      },
-      {
-        path: 'fireregister',
-        name: 'FireRegister',
-        component: FirebaseRegisterView
-      },
-      {
-        path: 'weather',
-        name: 'WeatherView',
-        component: WeatherView
-      }
-    ]
+    path: '/home',
+    name: 'Home',
+    component: HomeView
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: AboutView
+  },
+  {
+    path: '/firelogin',
+    name: 'Firelogin',
+    component: FirebaseSigninView
+  },
+  {
+    path: '/fireregister',
+    name: 'FireRegister',
+    component: FirebaseRegisterView
+  },
+  {
+    path: '/weather',
+    name: 'WeatherView',
+    component: WeatherView
   }
+  // {
+  //   path: "/",
+  //   redirect: "/home",
+  //   component: MainView,
+  //   children: [
+  //     {
+  //       path: 'home',
+  //       name: 'Home',
+  //       component: HomeView
+  //     },
+  //     {
+  //       path: 'about',
+  //       name: 'About',
+  //       component: AboutView
+  //     },
+  //     {
+  //       path: 'firelogin',
+  //       name: 'Firelogin',
+  //       component: FirebaseSigninView
+  //     },
+  //     {
+  //       path: 'fireregister',
+  //       name: 'FireRegister',
+  //       component: FirebaseRegisterView
+  //     },
+  //     {
+  //       path: 'weather',
+  //       name: 'WeatherView',
+  //       component: WeatherView
+  //     }
+  //   ]
+  // }
 ]
 
 // let userStore = useUserStore;
