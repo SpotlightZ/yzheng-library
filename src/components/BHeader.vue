@@ -28,6 +28,9 @@ let userRole = getUserRole()
         <li class="nav-item">
           <router-link to="fireregister" class="nav-link" active-class="active">Firebase Register</router-link>
         </li>
+        <li class="nav-item">
+          <router-link to="weather" class="nav-link" active-class="active">Weather</router-link>
+        </li>
       </ul>
     </header>
   </div>

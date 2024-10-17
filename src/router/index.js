@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import FirebaseSigninView from '../views/FirebaseSigninView.vue'
 import FirebaseRegisterView from '../views/FirebaseRegisterView.vue'
+import WeatherView from '../views/WeatherView.vue'
 import { useUserStore } from "@/store";
 
 const routes = [
@@ -36,6 +37,11 @@ const routes = [
         path: 'fireregister',
         name: 'FireRegister',
         component: FirebaseRegisterView
+      },
+      {
+        path: 'weather',
+        name: 'WeatherView',
+        component: WeatherView
       }
     ]
   }
