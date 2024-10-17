@@ -1,11 +1,11 @@
 <script setup>
 
-function getUserRole() {
-  // Determine user whether to log in
-  return JSON.parse(localStorage.getItem('loggedInUser')).role;
-}
+// function getUserRole() {
+//   // Determine user whether to log in
+//   return JSON.parse(localStorage.getItem('loggedInUser')).role;
+// }
 
-let userRole = getUserRole()
+// let userRole = getUserRole()
 
 </script>
 <template>
@@ -14,7 +14,7 @@ let userRole = getUserRole()
   <div class="container">
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
-        <li class="nav-item" v-if="userRole === 'admin'">
+        <li class="nav-item">
           <router-link to="home" class="nav-link" active-class="active" aria-current="page"
             >Home (Week 5)</router-link
           >

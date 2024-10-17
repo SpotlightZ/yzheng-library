@@ -5,17 +5,17 @@ import AboutView from '../views/AboutView.vue'
 import FirebaseSigninView from '../views/FirebaseSigninView.vue'
 import FirebaseRegisterView from '../views/FirebaseRegisterView.vue'
 import WeatherView from '../views/WeatherView.vue'
-import { useUserStore } from "@/store";
+// import { useUserStore } from "@/store";
 
 const routes = [
-  {
-    path: "/login",
-    name: "Login",
-    component: () => import("../views/LoginView.vue")
-  },
+  // {
+  //   path: "/login",
+  //   name: "Login",
+  //   component: () => import("../views/LoginView.vue")
+  // },
   {
     path: "/",
-    redirect: "/login",
+    redirect: "/home",
     component: MainView,
     children: [
       {
@@ -47,29 +47,29 @@ const routes = [
   }
 ]
 
-let userStore = useUserStore;
+// let userStore = useUserStore;
 
 const router = createRouter({
   history: createWebHistory(),
   routes
 })
 
-function getUserAuthStatus() {
-  // Determine user whether to log in
-  return Boolean(localStorage.getItem('loggedInUser'));
-}
+// function getUserAuthStatus() {
+//   // Determine user whether to log in
+//   return Boolean(localStorage.getItem('loggedInUser'));
+// }
 
-router.beforeEach((to, _, next) => {
-  const isAuthenticated = getUserAuthStatus();
-  if (!userStore) {
-    userStore = useUserStore();   
-  }
+// router.beforeEach((to, _, next) => {
+//   const isAuthenticated = getUserAuthStatus();
+//   if (!userStore) {
+//     userStore = useUserStore();   
+//   }
 
-  if (to.path !== "/login" && !isAuthenticated) {
-    next("/login");
-    return;
-  }
-  next();
-});
+//   if (to.path !== "/login" && !isAuthenticated) {
+//     next("/login");
+//     return;
+//   }
+//   next();
+// });
 
 export default router

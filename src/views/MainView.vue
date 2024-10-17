@@ -5,17 +5,17 @@ import router from '@/router/index'
 
 const userStore = useUserStore();
 
-const toLogout = () => {
-  userStore.logout();
-  router.replace("/login");
-}
+// const toLogout = () => {
+//   userStore.logout();
+//   router.replace("/login");
+// }
 
 </script>
 
 <template>
-    <div class="logout row justify-content-end text-center">
+    <!-- <div class="logout row justify-content-end text-center">
       <button @click="toLogout">logout</button>
-    </div>
+    </div> -->
     <div>
         <BHeader></BHeader>
         <router-view/>
