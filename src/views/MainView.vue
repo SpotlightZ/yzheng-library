@@ -1,5 +1,5 @@
 <script setup>
-import BHeader from '@/components/BHeader.vue'
+// import BHeader from '@/components/BHeader.vue'
 // import { useUserStore } from '@/store';
 // import router from '@/router/index'
 
@@ -17,7 +17,7 @@ import BHeader from '@/components/BHeader.vue'
       <button @click="toLogout">logout</button>
     </div> -->
     <div>
-        <BHeader></BHeader>
+        <!-- <BHeader></BHeader> -->
         <router-view/>
     </div>
 </template>
