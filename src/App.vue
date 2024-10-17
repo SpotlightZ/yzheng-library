@@ -1,19 +1,10 @@
 <script setup>
-// import JSONLab from './components/JSONLab.vue'
 import BHeader from './components/BHeader.vue'
-// import LibraryRegistrationForm from './views/HomeView.vue'
 </script>
 
 <template>
-  <!-- <header v-if="userStore.isAuthenticated"> -->
-    <!-- <BHeader /> -->
-  <!-- </header> -->
-
   <main>
-    <!-- <LibraryRegistrationForm /> -->
-    <!-- <JSONLab /> -->
     <BHeader />
-
     <router-view></router-view>
   </main>
 </template>
