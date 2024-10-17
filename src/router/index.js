@@ -50,7 +50,7 @@ const routes = [
 // let userStore = useUserStore;
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(import.meta.env.VITE_APP_BASE_URL),
   routes
 })
 
