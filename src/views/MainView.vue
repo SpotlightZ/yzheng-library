@@ -1,9 +1,9 @@
 <script setup>
 import BHeader from '@/components/BHeader.vue'
-import { useUserStore } from '@/store';
-import router from '@/router/index'
+// import { useUserStore } from '@/store';
+// import router from '@/router/index'
 
-const userStore = useUserStore();
+// const userStore = useUserStore();
 
 // const toLogout = () => {
 //   userStore.logout();
